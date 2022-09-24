@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "pydantic-argparse"
+version = "0.1.0"
+description = "Extensible command line argument parsing with Pydantic."
+authors = ["Guillem96 <guillem.orellana@gmail.com>"]
+license = "GPLv3"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pydantic = "*"
+
+[tool.poetry.dev-dependencies]
+flake8 = "*"
+mypy = "*"
+isort = "*"
+pytest = "*"
+black = "^22.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+cache_dir = ".cache/mypy/"
+ignore_missing_imports = true
+no_implicit_optional = true
+check_untyped_defs = true
+strict_equality = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[tool.black]
+line_length = 80
+
+[tool.isort]
+include_trailing_comma = true
+
+profile = "black"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+cache_dir = ".cache"
+filterwarnings = ["ignore::DeprecationWarning"]
+
